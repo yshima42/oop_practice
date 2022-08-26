@@ -1,8 +1,6 @@
 #include <gtest/gtest.h>
 #include "../src/Game.hpp"
 #include "../src/Scorer.hpp"
-#include "../src/Frame.hpp
-
 
 TEST(GameTest, TwoThrowsNoMark) {
 	Game g;
@@ -114,8 +112,9 @@ TEST(GameTest, TenthFrameSpare) {
 	ASSERT_EQ(270, g.score());
 }
 
-TEST(FrameTest, ScoreNoThrows) {
-	Frame f;
-	f.add(5);
-	ASSERT_EQ(5, f.getScore());
+TEST(GameTest, StrikeFrameScore) {
+	Game g;
+	g.add(10);
+	g.add(9);
+	ASSERT_EQ(19, g.scoreForFrame(1));
 }

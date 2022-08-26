@@ -1,13 +1,5 @@
 #include "Scorer.hpp"
 
-Scorer::Scorer()
-{
-}
-
-Scorer::~Scorer()
-{
-}
-
 void Scorer::addThrow(int pins) {
 	itsThrows_[itsCurrentThrow_++] = pins;
 }
@@ -50,5 +42,4 @@ int Scorer::twoBallsInFrame() {
 bool Scorer::spare() {
 	return (itsThrows_[ball_] + itsThrows_[ball_ + 1]) == 10;
 }
-
 

@@ -1,13 +1,5 @@
 #include "Game.hpp"
 
-Game::Game()
-{
-}
-
-Game::~Game()
-{
-}
-
 int Game::score() {
 	return scoreForFrame(itsCurrentFrame_);
 }
@@ -17,7 +9,7 @@ int Game::getCurrentFrame() {
 }
 
 void Game::add(int pins) {
-	itsScorer_->addThrow(pins);
+	itsScorer_.addThrow(pins);
 	adjustCurrentFrame(pins);
 }
 
@@ -50,6 +42,6 @@ void Game::advanceFrame() {
 }
 
 int Game::scoreForFrame(int theFrame) {
-	return itsScorer_->scoreForFrame(theFrame);
+	return itsScorer_.scoreForFrame(theFrame);
 }
 
