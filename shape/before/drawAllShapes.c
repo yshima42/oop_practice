@@ -1,24 +1,27 @@
 #include "shape.h"
-#include "square.h"
+#include <stdio.h>
 
-typedef struct Shape *ShapePointer;
-
-static DrawSquare(struct Square *s) {
+void DrawSquare(T_Square *s) {
+	printf("Drawing Square\n");
+	printf("Side: %d\n", s->itsSide);
+	printf("TopLeft Point: x: %d y: %d\n", s->itsTopLeft.x, s->itsTopLeft.y);
 }
 
-void DrawAllShapes(ShapePointer list[], int n) {
-	for (int i = 0; i < n; ++i) {
-		struct Shape *s = list[i];
-		switch (s->itsType) {
-			case square:
-				DrawSquare((struct Square *)s);
-				break;
+void DrawCircle(T_Circle *c) {
+	printf("Drawing Circle\n");
+	printf("Radius: %d\n", c->itsRadius);
+	printf("Center Point: x: %d y: %d\n", c->itsCenter.x, c->itsCenter.y);
+}
 
-			case circle:
-				DrawCircle((struct Circle *)s);
-				break;
+void DrawShape(T_Shape *list) {
+	switch (list->itsType) {
+		case square:
+			DrawSquare((T_Square *)list);
+			break;
 
-		}
+		case circle:
+			DrawCircle((T_Circle *)list);
+			break;
 	}
 }
 
