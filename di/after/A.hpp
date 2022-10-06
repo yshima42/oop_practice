@@ -1,8 +1,8 @@
 #include <iostream>
 
 class IB {
-	public:
-		virtual std::string getHowToGreet() = 0;
+ public:
+  virtual std::string getHowToGreet() = 0;
 };
 
 class A {
