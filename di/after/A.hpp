@@ -1,14 +1,14 @@
 #include <iostream>
 
-class IB {
+class Interface {
  public:
   virtual std::string getHowToGreet() = 0;
 };
 
 class A {
  public:
-  void greet(IB *b) {
-    std::string greetMessage = b->getHowToGreet();
+  void greet(Interface *i) {
+    std::string greetMessage = i->getHowToGreet();
     std::cout << greetMessage << std::endl;
   }
 };

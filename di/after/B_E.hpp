@@ -2,7 +2,7 @@
 
 #include "A.hpp"
 
-class B : public IB {
+class B_E : public Interface {
  public:
   std::string getHowToGreet() { return "hello"; }
 };
